@@ -1,0 +1,16 @@
+[core]
+    remote = localhost:9000
+['remote "minio-remote"']
+    url = s3://dvc-local
+    endpointurl = http://localhost:9000
+    access_key_id = 12345678
+    secret_access_key = 12345678
+    use_ssl = false
+['remote "localhost:9001"']
+    url = s3://data
+    secret_access_key = 12345678
+    access_key_id = 12345678
+['remote "localhost:9000"']
+    url = s3://dvc-local
+    secret_access_key = 12345678
+    access_key_id = 12345678

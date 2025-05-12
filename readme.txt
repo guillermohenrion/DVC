@@ -15,15 +15,17 @@ cd DVC
 dvc init
 
 mkdir data
-cp ../otro_lugar/dataset.csv data/
-dvc add data/dataset.csv
+cp ../data/titanic.csv data/
+dvc add data/titanic.csv
 
 .gitignore .
 
-git add .
+git add data/titanic.csv.dvc .gitignore .dvc/config
+git commit -m "Agrego dataset con DVC"
+
 git commit -m "Inicializo proyecto con Git y DVC, y agrego dataset"
 
-git remote add origin https://github.com/TU_USUARIO/TU_REPO.git
+git remote add origin
 git branch -M main
 git push -u origin main
 
@@ -46,7 +48,6 @@ mkdir scripts
 Agrega prepocews.py
 
 dvc stage add -n preprocess -d scripts/preprocess.py -d data/dataset.csv  -o data/processed.csv  python scripts/preprocess.py
-
 
 dvc repro
 
