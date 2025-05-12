@@ -67,3 +67,11 @@ DVC/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+
+dvc remote modify minio-remote secret_access_key 12345678
+dvc remote modify localhost:9001 access_key_id 12345678  
+dvc staus
+dvc add data/titanic.csv
+dvc push -r minio.remote
+dvc push -r minio-remote
+
