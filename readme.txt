@@ -38,6 +38,31 @@ DVC/
 ├── requirements.txt
 └── README.md
 
+Crear preprocess
+----------------
+
+mkdir scripts
+
+Agrega prepocews.py
+
+dvc stage add -n preprocess -d scripts/preprocess.py -d data/dataset.csv  -o data/processed.csv  python scripts/preprocess.py
 
 
+dvc repro
 
+git add dvc.yaml dvc.lock scripts/
+git commit -m "Agrega etapa de preprocesamiento con DVC"
+
+DVC/
+├── data/
+│   ├── dataset.csv
+│   └── processed.csv       <- archivo generado
+├── scripts/
+│   └── preprocess.py
+├── data/dataset.csv.dvc
+├── dvc.yaml                <- etapa definida
+├── dvc.lock                <- versión bloqueada
+├── .dvc/
+├── .gitignore
+├── requirements.txt
+└── README.md
